@@ -1,0 +1,9 @@
+<button (click)="queryParams()">Detalle país con Query Params</button>
+
+<button (click)="showAllCountries()">Show all countries</button>
+<div *ngFor="let country of countries">
+  <div>
+    {{ country | json }}
+    <div></div>
+  </div>
+</div>
