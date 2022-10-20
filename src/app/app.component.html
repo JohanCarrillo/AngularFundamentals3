@@ -1,7 +1,12 @@
-<a routerLink="/countries">Ver lista de paises</a>
-
-<div>
-  <button (click)="logIn()">Log In</button>
-  <button (click)="logOut()">Log Out</button>
+<div class="container-of-container">
+  <div class="container">
+    <div class="buttons-container">
+      <button (click)="logIn()">Log In</button>
+      <button (click)="logOut()">Log Out</button>
+    </div>
+    <div *ngIf="sessionStatus" class="link-container">
+      <a routerLink="/countries">Ver lista de paises</a>
+    </div>
+  </div>
 </div>
 <router-outlet></router-outlet>

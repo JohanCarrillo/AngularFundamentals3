@@ -4,8 +4,8 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 @Injectable()
-export class CountryService {
-  private countryAPIUrl: string = 'https://restcountries.com/v3.1/all';
+export class CountryListService {
+  private countryAPIUrl: string = 'https://restcountries.com/v2/all';
   constructor(private http: HttpClient) {}
 
   getAllCountries() {

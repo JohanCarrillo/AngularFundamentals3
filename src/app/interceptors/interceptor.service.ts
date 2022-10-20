@@ -19,7 +19,7 @@ export class InterceptorService implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const headers = new HttpHeaders({
-      'student-name': 'Johan',
+      name: 'BeeSoftLabs',
     });
 
     const newReq = req.clone({ headers: headers });

@@ -1,0 +1,123 @@
+.container-of-container {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    gap: 5%;
+
+    .button-container {
+      height: 7vh;
+      width: 90%;
+      text-align: center;
+      margin: 5%;
+
+      button {
+        height: 95%;
+        border-radius: 5%;
+        border: 2px solid rgba(74, 138, 211, 0.384);
+        background-color: rgba(239, 242, 255, 0.719);
+      }
+    }
+
+    .countries-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .country {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        padding: 3%;
+        gap: 3px;
+        margin: 5px;
+        img {
+          padding: 5%;
+        }
+      }
+    }
+  }
+}
+
+/* small screen devices */
+@media only screen and (max-width: 450px) {
+  .container-of-container {
+    .container {
+      .button-container {
+        button {
+          width: 60%;
+        }
+      }
+
+      .countries-container {
+        height: fit-content;
+        .country {
+          width: 70vw;
+          height: 90%;
+          img {
+            width: 90%;
+            height: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* medium screen devices */
+@media only screen and (min-width: 450px) {
+  .container-of-container {
+    .container {
+      .button-container {
+        button {
+          width: 50%;
+        }
+      }
+
+      .countries-container {
+        .country {
+          width: 40vw;
+          height: 55vh;
+        }
+        img {
+          max-width: 90%;
+          height: 50%;
+        }
+      }
+    }
+  }
+}
+
+/* wide screen devices */
+@media only screen and (min-width: 800px) {
+  .container-of-container {
+    .container {
+      .button-container {
+        button {
+          width: 35%;
+        }
+      }
+
+      .countries-container {
+        .country {
+          width: 25vw;
+          height: 55vh;
+        }
+        img {
+          height: 50%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<!-- <button (click)="queryParams()">Detalle país con Query Params</button> -->
+<div class="container-of-container">
+  <div class="container">
+    <div class="button-container">
+      <button (click)="showAllCountries()">Show all countries</button>
+    </div>
+    <div class="countries-container">
+      <div *ngFor="let country of countries" class="country">
+        <span><strong>Name:</strong> {{ country.name }}</span>
+        <span><strong>Capital:</strong> {{ country.capital }}</span>
+        <span><strong>Region:</strong> {{ country.region }}</span>
+        <span><strong>Population:</strong> {{ country.population }}</span>
+        <span><strong>Language:</strong> {{ country.languages[0].name }}</span>
+        <img src="{{ country.flags.png }}" alt="country flag" />
+      </div>
+    </div>
+  </div>
+</div>

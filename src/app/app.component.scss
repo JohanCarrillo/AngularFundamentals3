@@ -1,0 +1,99 @@
+.container-of-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 3px rgb(96, 0, 134);
+  height: 25vh;
+  background-color: rgb(166, 219, 255);
+  .link-container {
+    width: 90%;
+    text-align: center;
+    a {
+      color: white;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      text-decoration: none;
+      border: solid black 1px;
+      padding: 3%;
+    }
+  }
+  .buttons-container {
+    height: 25%;
+    display: flex;
+    gap: 25%;
+    width: 90%;
+    justify-content: center;
+    button {
+      height: 90%;
+      border-radius: 5%;
+      border: 2px solid rgba(74, 138, 211, 0.384);
+      background-color: rgba(239, 242, 255, 0.719);
+    }
+  }
+}
+
+/* small screen devices */
+@media only screen and (max-width: 450px) {
+  .container {
+    width: 90vw;
+    gap: 15px;
+    .link-container {
+      a {
+        font-size: 0.9rem;
+      }
+    }
+    .buttons-container {
+      button {
+        font-size: 0.9rem;
+        width: 35%;
+      }
+    }
+  }
+}
+
+/* medium screen devices */
+@media only screen and (min-width: 450px) {
+  .container {
+    width: 60vw;
+    gap: 20px;
+    .link-container {
+      a {
+        font-size: 1.1rem;
+      }
+    }
+    .buttons-container {
+      button {
+        font-size: 1rem;
+        width: 30%;
+      }
+    }
+  }
+}
+
+/* wide screen devices */
+@media only screen and (min-width: 800px) {
+  .container {
+    gap: 30px;
+    width: 55vw;
+    .link-container {
+      a {
+        font-size: 1.3rem;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+      }
+    }
+    .buttons-container {
+      button {
+        font-size: 0.9rem;
+        width: 40%;
+      }
+    }
+  }
+}
