@@ -1,0 +1,25 @@
+<div>
+  <form>
+    <label for="countryName">
+      Country
+      <input
+        type="text"
+        name="countryName"
+        id="countryName"
+        [value]="model.countryName"
+        [(ngModel)]="model.countryName"
+      />
+    </label>
+    <label for="capitalCity">
+      Capital City
+      <input
+        type="text"
+        name="capitalCity"
+        id="capitalCity"
+        [value]="model.capitalCity"
+        [(ngModel)]="model.capitalCity"
+      />
+    </label>
+    <button (click)="emitSearch()">Search</button>
+  </form>
+</div>

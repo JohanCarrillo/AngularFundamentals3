@@ -1,6 +1,9 @@
 <!-- <button (click)="queryParams()">Detalle país con Query Params</button> -->
 <div class="container-of-container">
   <div class="container">
+    <app-template-driven-form
+      (emitSearchData)="search($event)"
+    ></app-template-driven-form>
     <div class="button-container">
       <button (click)="showAllCountries()">Show all countries</button>
     </div>

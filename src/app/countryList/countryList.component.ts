@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { CountryListService } from './countryList.service';
+import SearchModel from '../types/searchCountry.type';
 
 @Component({
   selector: 'app-countryList',
@@ -9,6 +11,7 @@ import { CountryListService } from './countryList.service';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class CountryListComponent implements OnInit {
+  searchData: SearchModel = { countryName: '', capitalCity: '' };
   countries: any;
   constructor(
     public router: Router,
@@ -21,6 +24,12 @@ export class CountryListComponent implements OnInit {
     return this.countryListService
       .getAllCountries()
       .subscribe((data) => (this.countries = data));
+  }
+
+  search(data: SearchModel) {
+    this.searchData.countryName = data.countryName;
+    this.searchData.capitalCity = data.capitalCity;
+    console.log(this.searchData);
   }
 
   /* queryParams() {

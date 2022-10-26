@@ -7,10 +7,16 @@ import { AppComponent } from './app.component';
 import { CountryListComponent } from './countryList/countryList.component';
 import { CountryListService } from './countryList/countryList.service';
 import { InterceptorService } from './interceptors/interceptor.service';
+import { TemplateDrivenFormComponent } from './countryList/template-driven-form/template-driven-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, CountryListComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    CountryListComponent,
+    TemplateDrivenFormComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
     CountryListService,
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
