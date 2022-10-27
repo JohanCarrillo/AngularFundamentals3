@@ -1,9 +1,16 @@
 <!-- <button (click)="queryParams()">Detalle país con Query Params</button> -->
 <div class="container-of-container">
   <div class="container">
-    <app-template-driven-form
-      (emitSearchData)="search($event)"
-    ></app-template-driven-form>
+    <div>
+      <strong>Template-Driven form: </strong>
+      <app-template-driven-form
+        (emitSearchData)="search($event)"
+      ></app-template-driven-form>
+    </div>
+    <div>
+      <strong> Reactive Form: </strong>
+      <app-reactive-form (emitSearchData)="search($event)"></app-reactive-form>
+    </div>
     <div class="button-container">
       <button (click)="showAllCountries()">Show all countries</button>
     </div>

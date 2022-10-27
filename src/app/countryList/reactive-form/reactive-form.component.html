@@ -1,0 +1,9 @@
+<div>
+  <form [formGroup]="form">
+    <label>Country <input type="text" formControlName="countryName" /></label>
+    <label
+      >Capital City <input type="text" formControlName="capitalCity"
+    /></label>
+    <button (click)="emitSearch()">Search</button>
+  </form>
+</div>

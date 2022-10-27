@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 import { CountryListService } from './countryList.service';
 import SearchModel from '../types/searchCountry.type';
@@ -11,7 +12,10 @@ import SearchModel from '../types/searchCountry.type';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class CountryListComponent implements OnInit {
-  searchData: SearchModel = { countryName: '', capitalCity: '' };
+  searchData: SearchModel | Record<keyof SearchModel, FormControl> = {
+    countryName: '',
+    capitalCity: '',
+  };
   countries: any;
   constructor(
     public router: Router,
