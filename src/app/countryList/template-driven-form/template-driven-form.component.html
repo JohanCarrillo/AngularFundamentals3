@@ -1,5 +1,5 @@
 <div>
-  <form>
+  <form #newCountryForm="ngForm" (ngSubmit)="emitSearch()">
     <label for="countryName">
       Country
       <input
@@ -20,6 +20,6 @@
         [(ngModel)]="model.capitalCity"
       />
     </label>
-    <button (click)="emitSearch()">Search</button>
+    <button type="submit">Add Country</button>
   </form>
 </div>

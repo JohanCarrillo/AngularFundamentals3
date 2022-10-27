@@ -9,6 +9,6 @@ export class CountryListService {
   constructor(private http: HttpClient) {}
 
   getAllCountries() {
-    return this.http.get<unknown>(this.countryAPIUrl);
+    return this.http.get<any>(this.countryAPIUrl);
   }
 }

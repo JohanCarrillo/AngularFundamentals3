@@ -4,7 +4,7 @@
     <div>
       <strong>Template-Driven form: </strong>
       <app-template-driven-form
-        (emitSearchData)="search($event)"
+        (emitSearchData)="createNewCountry($event)"
       ></app-template-driven-form>
     </div>
     <div>
@@ -21,7 +21,7 @@
         <span><strong>Region:</strong> {{ country.region }}</span>
         <span><strong>Population:</strong> {{ country.population }}</span>
         <span><strong>Language:</strong> {{ country.languages[0].name }}</span>
-        <img src="{{ country.flags.png }}" alt="country flag" />
+        <img loading="lazy" src="{{ country.flags.png }}" alt="country flag" />
       </div>
     </div>
   </div>

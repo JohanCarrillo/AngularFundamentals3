@@ -11,29 +11,38 @@ import SearchModel from '../types/searchCountry.type';
   styleUrls: ['./countryList.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class CountryListComponent implements OnInit {
-  searchData: SearchModel | Record<keyof SearchModel, FormControl> = {
+export class CountryListComponent {
+  searchData: SearchModel = {
     countryName: '',
     capitalCity: '',
   };
-  countries: any;
+  countries: any[] = [];
+
   constructor(
     public router: Router,
     private countryListService: CountryListService
   ) {}
 
-  ngOnInit(): void {}
-
   showAllCountries() {
-    return this.countryListService
-      .getAllCountries()
-      .subscribe((data) => (this.countries = data));
+    return this.countryListService.getAllCountries().subscribe((data) => {
+      this.countries = data;
+      console.log(data);
+    });
   }
 
   search(data: SearchModel) {
     this.searchData.countryName = data.countryName;
     this.searchData.capitalCity = data.capitalCity;
     console.log(this.searchData);
+  }
+
+  createNewCountry(newCountry: SearchModel) {
+    this.countries.push({
+      name: newCountry.countryName,
+      capital: newCountry.capitalCity + ' City',
+    });
+    // this.countries = [...this.countries];
+    console.log(this.countries);
   }
 
   /* queryParams() {
